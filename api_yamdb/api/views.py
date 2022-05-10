@@ -1,27 +1,26 @@
 import uuid
 
 from django.contrib.auth.tokens import default_token_generator
-from django_filters.rest_framework import DjangoFilterBackend
 from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
 from django.conf import settings
 from django.db.models import Avg
 from django.core.mail import send_mail
-from django.shortcuts import get_object_or_404
-
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status, viewsets, filters
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.permissions import AllowAny, IsAuthenticated
-
 from reviews.models import Category, Genre, Title, Review, User
 
 from .filter import TitleFilter
 from .permissions import IsAdmin, IsAdminOrReadOnly, IsAuthorOrAdminOrModerator
-from .serializers import (CategorySerializer, GenreSerializer,
-                          TitleWriteSerializer, TitleReadSerializer,
-                          SignupSerializer, ReviewSerializer,
-                          CommentsSerializer, TokenSerializer, UserSerializer)
+from .serializers import (CategorySerializer, CommentsSerializer,
+                          GenreSerializer, ReviewSerializer,
+                          SignupSerializer, TitleReadSerializer,
+                          TitleWriteSerializer, TokenSerializer,
+                          UserSerializer)
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
