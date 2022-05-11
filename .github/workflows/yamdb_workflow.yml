@@ -49,7 +49,8 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
-          tags: andrey0901/yamdb_final:latest
+          tags: andrey0901/yamdb_final:v2
+          file: ./api_yamdb/Dockerfile
   
   deploy:
     runs-on: ubuntu-latest
