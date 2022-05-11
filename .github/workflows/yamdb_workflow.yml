@@ -49,7 +49,7 @@ jobs:
         uses: docker/build-push-action@v2 
         with:
           push: true
-          tags: andrey0901/yamdb_final:v2
+          tags: andrey0901/yamdb_final:latest
   
   deploy:
     runs-on: ubuntu-latest
