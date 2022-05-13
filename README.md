@@ -17,7 +17,7 @@
 
 Клонировать репозиторий:
 
-git clone https://github.com/Vofkabob/yamdb_final.git
+git clone https://github.com/andrey-ushak0v/yamdb_final.git
 Запустить docker-compose:
 
 docker-compose up -d --build
