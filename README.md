@@ -17,15 +17,15 @@
 
 Клонировать репозиторий:
 
-git clone https://github.com/andrey-ushak0v/yamdb_final.git
+```git clone https://github.com/andrey-ushak0v/yamdb_final.git```
 Запустить docker-compose:
 
-docker-compose up -d --build
+```docker-compose up -d --build```
 Выполнить миграции, создать суперпользователя, собрать статику.
 
-docker-compose exec web python manage.py migrate
-docker-compose exec web python manage.py createsuperuser
-docker-compose exec web python manage.py collectstatic --no-input 
+```docker-compose exec web python manage.py migrate```
+```docker-compose exec web python manage.py createsuperuser```
+```docker-compose exec web python manage.py collectstatic --no-input``` 
 Создать файл .env из директории infra/ и внестите в него данные:
 
 DB_ENGINE=django.db.backends.postgresql
