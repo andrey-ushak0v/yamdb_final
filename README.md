@@ -11,21 +11,24 @@
 2 Сборка docker-образа происходит на основании файлов Dockerfile и docker-compose.yaml, где находятся соответствующие инструкции. Образ собирается сервисе DockerHub, создаются 3 контейнера: web, db и nginx;
 
 3 Проект запускается из сервиса DockerHub, после успешного запуска всех 3-х контейнеров.
-Проект доступен по ссылке - http://51.250.97.250/redoc
+Проект доступен по ссылке - (http://51.250.97.250/redoc)
 
 # Подготовка и запуск проекта:
 
 Клонировать репозиторий:
 
 ```git clone https://github.com/andrey-ushak0v/yamdb_final.git```
+
 Запустить docker-compose:
 
 ```docker-compose up -d --build```
+
 Выполнить миграции, создать суперпользователя, собрать статику.
 
 ```docker-compose exec web python manage.py migrate```
 ```docker-compose exec web python manage.py createsuperuser```
 ```docker-compose exec web python manage.py collectstatic --no-input``` 
+
 Создать файл .env из директории infra/ и внестите в него данные:
 
 DB_ENGINE=django.db.backends.postgresql
@@ -37,4 +40,4 @@ DB_PORT=5432
 
 # Автор: 
 
-Ушаков Андрей - https://github.com/andrey-ushakOv
+Ушаков Андрей - (https://github.com/andrey-ushakOv)
